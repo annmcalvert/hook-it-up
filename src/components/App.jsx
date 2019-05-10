@@ -8,14 +8,14 @@ const App = () => {
 
     return (
         <div className="container">
-        <h1>New Lab</h1>
+        <h1>Hook it up!</h1>
         <br/>
         <Router>
             <Fragment>
                 <Link className="btn btn-primary m-3" to="/">Go Home</Link>
                 <Link className="btn btn-primary m-3" to="/users">Users</Link>
            <Switch>
-               {/* <Route exact path="/" component={Users} /> */}
+               <Route exact path="/" component={Users} />
                <Route exact path="/users" component={Users} />
                <Route exact path="/:id" component={DisplayUser} />
            </Switch>
