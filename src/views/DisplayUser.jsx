@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const DisplayUser = (props) => {
 
     let statePlaceholder = {
-        id: "",
         name: "",
         username: "",
         email: "",
@@ -35,24 +34,22 @@ const DisplayUser = (props) => {
         getUser();
     }, []);
 
-    console.log(user);
-
-    if (Array.isArray(user)) return null;
     return (
-        <div className="card bg-light mb-3">
-            <div className="card-header">{user.name}</div>
-            <div className="card-body">
-                <p>Username: {user.username}</p>
-                <p>Email: {user.email}</p>
-                {/* <p>Address: {user.address}</p> */}
-                <p>Phone Number: {user.phone}</p>
-                <p>Website: {user.website}</p>
-                <p>Company: {user.company.name}</p>
-
-
+        <>
+            <Link className="btn btn-primary m-3" to="/">Go Home</Link>
+            <div className="card bg-light mb-3">
+                <div className="card-header">{user.name}</div>
+                <div className="card-body">
+                    <p>Username: {user.username}</p>
+                    <p>Email: {user.email}</p>
+                    <p>Address: {user.address.street} {user.address.suite}, {user.address.city} {user.address.zipcode}</p>
+                    <p>Phone Number: {user.phone}</p>
+                    <p>Website: {user.website}</p>
+                    <p>Company: {user.company.name}</p>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
-export default withRouter(DisplayUser);
+export default DisplayUser;

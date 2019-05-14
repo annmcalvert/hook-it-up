@@ -16,17 +16,13 @@ const Users = () => {
     }, []);
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <ul className="list-group">
-                        {users.map(user => <li key={user.id} user={user}>
-                            <Link to={"/" + user.id}>{user.name}</Link>
-                        </li>)}
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <>
+            <ul>
+                {users.map(user => <li key={user.id} user={user}>
+                    <Link to={"/" + user.id}>{user.name}</Link>
+                </li>)}
+            </ul>
+        </>
     );
 }
 
