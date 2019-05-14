@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 const DisplayUser = (props) => {
 
-    const statePlaceholder = {
+    let statePlaceholder = {
         id: "",
         name: "",
         username: "",
@@ -21,7 +21,7 @@ const DisplayUser = (props) => {
         }
     }
 
-    const [user, setUser] = useState({ statePlaceholder });
+    const [user, setUser] = useState(statePlaceholder);
 
     const userId = props.match.params.id;
 
@@ -47,7 +47,7 @@ const DisplayUser = (props) => {
                 {/* <p>Address: {user.address}</p> */}
                 <p>Phone Number: {user.phone}</p>
                 <p>Website: {user.website}</p>
-                {/* <p>Company: {user.company.name}</p> */}
+                <p>Company: {user.company.name}</p>
 
 
             </div>
