@@ -36,7 +36,8 @@ const DisplayUser = (props) => {
 
     return (
         <>
-            <Link className="btn btn-primary m-3" to="/">Go Home</Link>
+            {/* <Link className="btn btn-primary m-3" to="/">Go Home</Link> */}
+            <button className="btn btn-primary m-3" onClick={() => props.history.goBack()}>Go Home</button>
             <div className="card bg-light mb-3">
                 <div className="card-header">{user.name}</div>
                 <div className="card-body">
